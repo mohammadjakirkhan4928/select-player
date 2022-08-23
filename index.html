@@ -1,13 +1,164 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select-best-five</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+
+<body class="bg-gray-800">
+
+
+    <section class="bg-slate-900 py-12 h-96 ">
+        <div class="mt-8 pt-8">
+            <h1 class="text-center text-yellow-500 text-5xl pb-3 font-sans font-bold">Select Your Best Five</h1>
+            <p class="text-center font-semibold  text-yellow-500">You want to wacht this Macth.Because you are fan of
+                FOTBALL</p>
+        </div>
+    </section>
+
+
+    <!-- player 1 -->
+    <div class="w-9/12 mx-auto grid grid-cols-4 gap-5 mb-8 mt-3">
+
+        <div class="border-4 bg-slate-800 rounded-lg gap-5">
+            <img src="ambappa.png" alt="">
+            <h1 class="text-center my-4 text-white text-2xl">Kylian Mbappé</h1>
+            <div>
+                <p class="text-slate-50 text-center">36 Goals . 120 Assist</p>
+                <button id="select" class="btn btn-primary px-20 ml-4 mb-4" onclick="playerSelect(this)">SELECT</button>
+            </div>
+        </div>
+
+
+        <!-- player 2 -->
+        <div class="border-4 bg-slate-800">
+            <img src="dari.png" alt="">
+            <h1 class="text-center my-4 text-white text-2xl pl-4">Vítor Machado</h1>
+            <div>
+                <p class="text-slate-50 text-center">36 Goals . 120 Assist</p>
+                <button class="btn btn-primary px-20 ml-4 mb-4" onclick="playerSelect(this)">SELECT</button>
+            </div>
+        </div>
+
+
+        <!-- player 3 -->
+        <div class="border-4 bg-slate-800">
+            <img src="JANINA.png" alt="">
+            <h1 class="text-center my-4 text-white text-2xl">Sergio Ramos</h1>
+            <div>
+                <p class="text-slate-50 text-center">36 Goals . 120 Assist</p>
+                <button class="btn btn-primary px-20 ml-4 mb-4" onclick="playerSelect(this)">SELECT</button>
+            </div>
+        </div>
+
+
+
+
+        <!-- selected-V -->
+        <div class="border-4 bg-slate-800">
+
+            <p class="text-center my-4 text-white text-2xl">Selected - V</p>
+
+            <ol id="add-name"> </ol>
+            <!-- <div id="total-selected-item">
+
+            </div> -->
+            <table>
+                <!-- head -->
+                <!-- <thead>
+                        <tr>
+                            <th>Player Num</th>
+                            <th>Player Name</th>
+                        </tr>
+                    </thead> -->
+                <tbody id="players-cart" class="table-list">
+                    <!-- <tr>
+                            <th>1</th>
+                            <td>Messi</td>
+                        </tr> -->
+                </tbody>
+            </table>
+
+        </div>
+
+        <!-- player 4 -->
+        <div class="border-4 bg-slate-800">
+            <img src="karim.png" alt="">
+            <h1 class="text-center my-4 text-white text-2xl">karim</h1>
+
+            <div>
+                <p class="text-slate-50 text-center">36 Goals . 120 Assist</p>
+                <button class="btn btn-primary px-20 ml-4 mb-4" onclick="playerSelect(this)">SELECT</button>
+            </div>
+
+        </div>
+
+
+
+        <!-- player 5 -->
+        <div class="border-4 bg-slate-800">
+            <img src="neymer.png" alt="">
+            <h1 class="text-center my-4 text-white text-2xl">Naymer JR</h1>
+            <div>
+                <p class="text-slate-50 text-center">36 Goals . 120 Assist</p>
+                <button class="btn btn-primary px-20 ml-4 mb-4" onclick="playerSelect(this)">SELECT</button>
+            </div>
+        </div>
+
+
+        <!-- player 6 -->
+        <div class="border-4 bg-slate-800">
+            <img src="messi.png" alt="">
+            <h1 class="text-center my-4 text-white text-bg-gray-800">Messi</h1>
+            <div>
+                <p class="text-slate-50 text-center">36 Goals . 120 Assist</p>
+                <button id="clickThisBtn" class="btn btn-primary px-20 ml-4 mb-4"
+                    onclick="playerSelect(this)">SELECT</button>
+            </div>
+        </div>
+
+
+        <!-- Budject -->
+        <div class="border-4 bg-slate-500 grid-rows-2 row-span-3 ">
+            <h1 class="text-center my-4 text-white text-2xl">Budget</h1>
+
+            <h1 class="inline text-3xl ml-6">Per Player</h1>
+            <input id="player-ammount" value="" class="w-36 py-2 px-12" type="number">
+
+            <button id="per-player-calculate-ammount"
+                class=" btn-primary px-20 py-2 ml-4 my-4 text-xl">Calculate</button>
+
+            <h1 class="inline text-3xl ml-6 mr-6  ">Player Expenses $<span id="per-player-total">00</span></h1>
+
+            <h1 class="inline text-3xl ml-6 ">Manager</h1>
+            <input id="manager-cost" class="w-36 py-2 my-4 ml-2" type="number">
+
+            <h1 class="inline text-3xl ml-6">Coach</h1>
+            <input id="coach-cost" class="w-36 py-2 ml-7" type="number">
+
+            <button id="calculate-total-cost" class=" btn-primary px-10 py-4 my-7 ml-3  text-xl">Calculate
+                Total</button>
+
+            <h1 class="inline text-lg text-center ml-24  ">Total $<span id="per-total-cost">00</span></h1>
+        </div>
+
+
+
+    </div>
+
+    <footer class="text-center text-2xl my-10 bg-black-400">
+        <hr>
+        <h1 class="mt-4 text-slate-100">All copyrignt deserve Qater!</h1>
+    </footer>
+
+    <script src="js/app.js"></script>
 </body>
+
 </html>
+<!-- cdn.tailwindcss.com -->
