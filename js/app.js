@@ -21,6 +21,11 @@ function playerSelect(element) {
 
     showPlayerName.appendChild(link)
 
+     // FOR get length of the list items names
+     
+     const lengthThofPlayer = document.querySelectorAll('#add-name');
+     const totalLengthPlayer = lengthThofPlayer.length;
+
     const playerObj = {
         playerName: playerName,
     }
