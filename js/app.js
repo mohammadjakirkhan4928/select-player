@@ -22,7 +22,7 @@ function playerSelect(element) {
     showPlayerName.appendChild(link)
 
      // FOR get length of the list items names
-     
+
      const lengthThofPlayer = document.querySelectorAll('#add-name');
      const totalLengthPlayer = lengthThofPlayer.length;
 
@@ -40,14 +40,14 @@ function playerSelect(element) {
 
 
 
-document.getElementById("per-player-calculate-ammount").addEventListener('click', function () {
+document.getElementById("per-player-calculate-cost").addEventListener('click', function () {
 
 
     const selectedPlayers = cartArray.length
 
 
-    const ammountField = document.getElementById('player-ammount');
-    const newPerPlayerAmount = ammountField.value;
+    const costField = document.getElementById('player-ammount');
+    const newPerPlayerAmount = costField.value;
 
     const PlayerAmount = parseFloat(newPerPlayerAmount);
 
